@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lab 2 – JSX without React</title>
+    <style>
+      .stack { display: grid; gap: 20px; }
+
+      :root{--bg:#0b0c10;--card:#15171c;--muted:#a7b0be;--text:#e9eef6;--brand:#5aa9e6;--brand2:#c4f1be}
+      *{box-sizing:border-box} html,body{height:100%}
+      body{margin:0;background:linear-gradient(180deg,#0b0c10,#0f1117); color:var(--text); font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+      a{color:var(--brand); text-decoration:none}
+      .container{max-width:960px; margin:24px auto; padding:0 16px}
+      header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(6px); background:rgba(10,12,16,.7); border-bottom:1px solid #161a21}
+      header .wrap{max-width:960px; margin:0 auto; padding:10px 16px; display:flex; gap:12px; align-items:center; justify-content:space-between}
+      .title{font-weight:700; letter-spacing:.2px}
+      .muted{color:var(--muted); font-size:13px}
+      nav.buttons{display:flex; gap:8px; flex-wrap:wrap}
+      button{appearance:none; border:1px solid #2a2f39; background:#13161b; color:var(--text); padding:8px 12px; border-radius:8px; cursor:pointer}
+      button:hover{border-color:#3a4150}
+      button.primary{background:linear-gradient(180deg,#1b2330,#131922); border-color:#2e3744}
+      .card{background:var(--card); border:1px solid #1e2330; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.2)}
+      .card-title{padding:12px 14px; border-bottom:1px solid #22293a; font-weight:600}
+      .card-body{padding:14px}
+      .grid{display:grid; gap:16px}
+      @media (min-width: 900px){ .grid.two{grid-template-columns: 1fr 1fr} }
+      label{font-size:13px; color:var(--muted); margin-right:6px}
+      input[type="text"], select{background:#10141b; color:var(--text); border:1px solid #2a2f39; border-radius:8px; padding:8px 10px}
+      .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+      .footer{margin:24px 0 16px; color:var(--muted); font-size:12px; text-align:center}
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="title">Lab 2 — JSX without React</div>
+        <div class="muted">Custom JSX • Hooks • Components • Canvas</div>
+      </div>
+    </header>
+    <div id="app" class="container"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
