@@ -46,7 +46,7 @@ export const Dashboard = () => {
 
   return (
     <div style={{ padding: 16, fontFamily: 'system-ui', lineHeight: 1.3 }}>
-      <h1 style={{ marginBottom: 12 }}>Exercise 4.1 — Dashboard</h1>
+      
 
       <Card title="Controls" style={{ marginBottom: 12, padding: 12, border: '1px solid #eee', borderRadius: 8 }}>
         <Form onSubmit={() => regenerate()}>

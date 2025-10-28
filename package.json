@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "type-check": "tsc -p tsconfig.json --noEmit"
+    "build": "vite build",          
+    "type-check": "tsc --noEmit",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
