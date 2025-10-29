@@ -8,7 +8,7 @@ export interface BaseProps {
   children?: any;
 }
 
-/* Card */
+
 export interface CardProps extends BaseProps {
   title?: string;
   onClick?: (e: MouseEvent) => void;
@@ -20,7 +20,7 @@ export const Card = ({ title, className = '', style, onClick, children }: CardPr
   </div>
 );
 
-/* Modal */
+
 export interface ModalProps extends BaseProps {
   isOpen: boolean;
   title?: string;
@@ -40,7 +40,7 @@ export const Modal = ({ isOpen, title, onClose, className = '', style, children 
   );
 };
 
-/* Form */
+
 export interface FormProps extends BaseProps { onSubmit: (e: Event) => void; }
 export const Form = ({ onSubmit, className = '', style, children }: FormProps) => (
   <form className={className} style={style} onSubmit={(e: any) => { e.preventDefault(); onSubmit(e); }}>
@@ -48,7 +48,7 @@ export const Form = ({ onSubmit, className = '', style, children }: FormProps) =
   </form>
 );
 
-/* Input */
+
 export interface InputProps extends BaseProps {
   type?: string;
   name?: string;
