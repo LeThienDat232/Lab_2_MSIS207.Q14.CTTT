@@ -1,7 +1,7 @@
 ﻿/** @jsx createElement */
 import { createElement, useState } from './jsx-runtime';
 
-// Types
+
 interface Todo {
   id: number;
   text: string;
@@ -10,13 +10,12 @@ interface Todo {
 }
 
 interface TodoItemProps {
-  key?: any; // allow 'key' in TS to avoid complaints in map()
+  key?: any; 
   todo: Todo;
   onToggle: (id: number) => void;
   onDelete: (id: number) => void;
 }
 
-// TodoItem
 const TodoItem = ({ todo, onToggle, onDelete }: TodoItemProps) => {
   const itemClass = 'item' + (todo.completed ? ' completed' : '');
   return (
@@ -28,7 +27,6 @@ const TodoItem = ({ todo, onToggle, onDelete }: TodoItemProps) => {
   );
 };
 
-// AddTodoForm
 interface AddTodoFormProps {
   onAdd: (text: string) => void;
 }
@@ -36,7 +34,6 @@ interface AddTodoFormProps {
 const AddTodoForm = ({ onAdd }: AddTodoFormProps) => {
   const [getText, setText] = useState<string>('');
 
-  // Keep the input focused (and caret at end) after EVERY re-render (fixes 1-char issue)
   const focusRef = (el: HTMLInputElement | null) => {
     if (!el) return;
     requestAnimationFrame(() => {
@@ -46,7 +43,6 @@ const AddTodoForm = ({ onAdd }: AddTodoFormProps) => {
     });
   };
 
-  // Stop the submit button from stealing focus on mousedown
   const preventButtonFocus = (e: any) => e.preventDefault();
 
   const submit = (e: any) => {
@@ -54,7 +50,7 @@ const AddTodoForm = ({ onAdd }: AddTodoFormProps) => {
     const t = getText().trim();
     if (!t) return;
     onAdd(t);
-    setText(''); // next render re-focuses input via ref
+    setText(''); 
   };
 
   return (
@@ -64,7 +60,7 @@ const AddTodoForm = ({ onAdd }: AddTodoFormProps) => {
         type="text"
         placeholder="Add a todo..."
         value={getText()}
-        onInput={(e: any) => setText(e.target.value)}  // every keystroke
+        onInput={(e: any) => setText(e.target.value)} 
         name="todo"
       />
       <button type="submit" onMouseDown={preventButtonFocus}>Add</button>
@@ -72,7 +68,7 @@ const AddTodoForm = ({ onAdd }: AddTodoFormProps) => {
   );
 };
 
-// TodoApp
+
 const TodoApp = () => {
   const [getTodos, setTodos] = useState<Todo[]>([]);
 
