@@ -4,13 +4,11 @@ import { Card, Form, Input, Modal } from './components';
 import { DataService, type DataPoint } from './data-service';
 import { Chart, type ChartType } from './chart';
 
-// ADD THESE:
 import { Counter } from './counter';
 import { TodoApp } from './todo-app';
 
 const ds = new DataService();
 
-// simple singleton timer (no useEffect in our runtime)
 let liveTimer: number | null = null;
 
 export const Dashboard = () => {
@@ -97,7 +95,7 @@ export const Dashboard = () => {
         <Chart type={getType()} data={getData()} height={340} />
       </Card>
 
-      {/* ADD THESE TWO CARDS so Part 2 is visible to the grader */}
+      {}
       <Card title="Counter" style={{ padding: 12, border: '1px solid #eee', borderRadius: 8, marginBottom: 12 }}>
         <Counter initialCount={0} />
       </Card>
